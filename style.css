@@ -1,0 +1,49 @@
+body {
+  background-color:rgb(29, 121, 116);
+  color:black;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.pizzas {
+ /* display: flex; */
+}
+
+.pizza{
+    
+  margin:0.5em;
+  padding:0.5em;
+  width:20em;
+  border-radius:0.25em;
+  display:inline-block;
+  background-color:rgb(8, 150, 107);
+  color:black;
+  }
+
+.btn {
+color: rgb(0, 255, 55);
+background-color: rgb(255, 30, 0);
+margin-top: 0.5em;
+padding: 0.5em;
+float: right;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid black;
+  margin: auto;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
