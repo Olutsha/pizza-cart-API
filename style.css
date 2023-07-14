@@ -30,20 +30,25 @@ margin-top: 0.5em;
 padding: 0.5em;
 float: right;
 }
-
 table {
-  border-collapse: collapse;
   width: 100%;
-  border: 1px solid black;
-  margin: auto;
+  border-collapse: collapse;
 }
 
 th, td {
-  text-align: center;
   padding: 8px;
-  border: 1px solid black;
+  text-align: left;
+  border: 1px solid #f50e06;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 600px) {
+  td {
+    display: block;
+    margin-bottom: 20px;
+  }
 }
