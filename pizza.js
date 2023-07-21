@@ -41,7 +41,9 @@ document.addEventListener("alpine:init", () => {
           // else it creates a new cart id
           else {
             const createCartURL = `https://pizza-api.projectcodex.net/api/pizza-cart/create?username='${this.username}`;
-            return axios.get(createCartURL).then((result) => {
+            return axios
+            .get(createCartURL)
+            .then((result) => {
               this.cartId = result.data.cart_code;
   
               localStorage["cartId"] = this.cartId;
@@ -165,7 +167,7 @@ return '/img/${pizza.size}.png'
         },
       };
     });
-  });ocument.addEventListener("alpine:init", () => {
+  });document.addEventListener("alpine:init", () => {
   Alpine.data("pizzaCart", () => {
     return {
       title: "Pizza cart API",
@@ -296,7 +298,7 @@ return '/img/${pizza.size}.png'
           this.showCartData();
         });
       },
-
+      
       payForCart() {
         // alert("Pay Now :" +this.paymentAmount);
 
@@ -320,6 +322,7 @@ return '/img/${pizza.size}.png'
         });
       },
     };
+    
     
   });
 });

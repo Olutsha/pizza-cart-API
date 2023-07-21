@@ -16,7 +16,7 @@
     <div class="container">
         <h1 x-text="title"></h1>
         <div class="cart" x-cloak>
-
+<a href="history.html">HISTORICAL ORDERS</a>
             <div>
                 <div>
                     Username:<input type="text" x-model="username">
@@ -76,38 +76,56 @@
         </div>
         <!-- Funtionality to our button ends here -->
         <!-- Looping through the pizza starts here -->
-        <table>
-            <h1>Featured Pizzas</h1>
-            <tr>
-              <th>Small-Pizza</th>
-              <th>Medium-Pizza</th>
-              <th>Large-pizza</th>
-            </tr>
-            <tr>
-              <td>
-                Margherita small@ R29.99
-                <img src="img/Small-Pizza.png" height="150" alt="descriptive text">
-                <div>
-                    <button class="btn" x-on:click="addPizzaToCart(pizza.id)">BUY</button>
-                </div>
-              </td>
-              <td>
-                Margherita medium@ R49.99
-                <img src="img/Medium-Pizza.png" height="150" alt="descriptive text">
-                <div>
-                    <button class="btn" x-on:click="addPizzaToCart(pizza.id)">BUY</button>
-                </div>
-              </td>
-              <td>
-                Margherita large@ R69.99
-                <img src="img/Large-pizza.png" height="150" alt="descriptive text">
-                <div>
-                    <button class="btn" x-on:click="addPizzaToCart(pizza.id)">BUY</button>
-                </div>
-              </td>
-            </tr>
-          </table>
+        <div class="pizzas" x-show="username  && cartId">
+            <h2>CHIP PIZZAS</h2>
+            <table>
+                <th>
+                    <div class="pizza">
+                        <h5 x-text="pizzas.filter(pizza => pizza.size === 'small').sort((a,b) => a.price - b.price)[0].flavour"></h5>
+                        <span x-text="pizzas.filter(pizza => pizza.size === 'small').sort((a,b) => a.price - b.price)[0].size"></span>@
+                        <strong>
+                          R<span x-text="pizzas.filter(pizza => pizza.size === 'small').sort((a,b) => a.price - b.price)[0].price"></span>
+                        </strong>
+                        <div>
+                          <button class="btn" x-on:click="addPizzaToCart(pizzas.filter(pizza => pizza.size === 'small').sort((a,b) => a.price - b.price)[0].id)">BUY</button>
+                        </div>
+                        <img src="img/Small-Pizza.png" height="150" alt="descriptive text">
+                      </div>
+                </th>
+                <th>
+                    <div class="pizza">
+                        <h5 x-text="pizzas.filter(pizza => pizza.size === 'medium').sort((a,b) => a.price - b.price)[0].flavour"></h5>
+                        <span x-text="pizzas.filter(pizza => pizza.size === 'medium').sort((a,b) => a.price - b.price)[0].size"></span>@  
+                        <strong>
+                          R<span x-text="pizzas.filter(pizza => pizza.size === 'medium').sort((a,b) => a.price - b.price)[0].price"></span>
+                        </strong>
+                        <img src="img/Medium-Pizza.png" height="150" alt="descriptive text">
+                      </div>
+                      <div>
+                        <button class="btn" x-on:click="addPizzaToCart(pizzas.filter(pizza => pizza.size === 'medium').sort((a,b) => a.price - b.price)[0].id)">BUY</button>
+                      </div>
+                </th>
+                <th>
+            <div class="pizza">
+              <h5 x-text="pizzas.filter(pizza => pizza.size === 'large').sort((a,b) => a.price - b.price)[0].flavour"></h5>
+              <span x-text="pizzas.filter(pizza => pizza.size === 'large').sort((a,b) => a.price - b.price)[0].size"></span>@
+              <strong>
+                R<span x-text="pizzas.filter(pizza => pizza.size === 'large').sort((a,b) => a.price - b.price)[0].price"></span>
+              </strong>                   
+              <img src="img/Large-pizza.png" height="150" alt="descriptive text">
+              <div> 
+     <button class="btn" x-on:click="addPizzaToCart(pizzas.filter(pizza => pizza.size === 'large').sort((a,b) => a.price - b.price)[0].id)">BUY</button> 
+                </div> 
+                </th>
+            </table>
+
           
+
+          
+
+              </div> 
+            </div> 
+          </div>    
        
         <div class="pizzas" x-show="username  && cartId">
             <h2>Pizzas</h2>
@@ -135,7 +153,7 @@
             <template x-if="pizza['size']=='medium'">
                 <div class="pizza">
                     <h5 x-text="pizza.flavour"></h5>
-                    <span x-text="pizza.size"></span>@
+                    <span x-text="pizza.size"></span>@  
                     <strong>
                         R<span x-text="pizza.price"></span>
                     </strong>
