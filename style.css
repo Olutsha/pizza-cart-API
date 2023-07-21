@@ -1,6 +1,8 @@
 body {
-  background-color:rgb(29, 121, 116);
-  color:black;
+  background-color:rgb(247, 247, 247);
+  color:white;
+  background-image: url("background-image/pizzaCat.png");
+  background-size: cover;
 }
 
 .container {
@@ -20,7 +22,7 @@ body {
   border-radius:0.25em;
   display:inline-block;
   background-color:rgb(8, 150, 107);
-  color:black;
+  color:rgb(31, 230, 13);
   }
 
 .btn {
@@ -33,10 +35,11 @@ float: right;
 table {
   width: 100%;
   border-collapse: collapse;
+  overflow-x:auto;
 }
 
 th, td {
-  padding: 8px;
+  padding: 2px;
   text-align: left;
   border: 1px solid #f50e06;
 }
@@ -51,4 +54,10 @@ img {
     display: block;
     margin-bottom: 20px;
   }
+}
+button {
+  display: block;
+  margin: 0 auto;
+  background-color: rgb(43, 206, 21);
+  color: rgb(20, 241, 193);
 }

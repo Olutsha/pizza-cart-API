@@ -16,7 +16,7 @@
     <div class="container">
         <h1 x-text="title"></h1>
         <div class="cart" x-cloak>
-<a href="history.html">HISTORICAL ORDERS</a>
+ 
             <div>
                 <div>
                     Username:<input type="text" x-model="username">
@@ -68,16 +68,19 @@
                             <input x-model="paymentAmount" type="text">
                         </td>
                         <td>
-                            <button x-on:click="payForCart()">Pay</button>
+                            <button x-on:click="payForCart()">CLEAR CART</button>
                         </td>
                     </tr>
                 </table>
             </div>
+
+        <br>
+        <button><a href="history.html">PREVIOUSLY ORDERED PIZZAS</a></button>
         </div>
         <!-- Funtionality to our button ends here -->
         <!-- Looping through the pizza starts here -->
         <div class="pizzas" x-show="username  && cartId">
-            <h2>CHIP PIZZAS</h2>
+            <h2>RECOMENDEND PIZZAS</h2>
             <table>
                 <th>
                     <div class="pizza">
@@ -86,10 +89,11 @@
                         <strong>
                           R<span x-text="pizzas.filter(pizza => pizza.size === 'small').sort((a,b) => a.price - b.price)[0].price"></span>
                         </strong>
-                        <div>
-                          <button class="btn" x-on:click="addPizzaToCart(pizzas.filter(pizza => pizza.size === 'small').sort((a,b) => a.price - b.price)[0].id)">BUY</button>
-                        </div>
+
                         <img src="img/Small-Pizza.png" height="150" alt="descriptive text">
+                        <div>
+                            <button class="btn" x-on:click="addPizzaToCart(pizzas.filter(pizza => pizza.size === 'small').sort((a,b) => a.price - b.price)[0].id)">BUY</button>
+                          </div>
                       </div>
                 </th>
                 <th>
@@ -100,10 +104,11 @@
                           R<span x-text="pizzas.filter(pizza => pizza.size === 'medium').sort((a,b) => a.price - b.price)[0].price"></span>
                         </strong>
                         <img src="img/Medium-Pizza.png" height="150" alt="descriptive text">
+                        <div>
+                            <button class="btn" x-on:click="addPizzaToCart(pizzas.filter(pizza => pizza.size === 'medium').sort((a,b) => a.price - b.price)[0].id)">BUY</button>
+                          </div>
                       </div>
-                      <div>
-                        <button class="btn" x-on:click="addPizzaToCart(pizzas.filter(pizza => pizza.size === 'medium').sort((a,b) => a.price - b.price)[0].id)">BUY</button>
-                      </div>
+
                 </th>
                 <th>
             <div class="pizza">
@@ -181,9 +186,29 @@
                 </div>
             </template>
            </template>
+           <div class="footer">
+            <div class="contact">
+              <strong>Contact/whatsapp us at:</strong>
+              0735641431
+        
+              <strong>twitter</strong> @Mjoli's Pizzera
+              <div class="address">
+                Mjoli's crib
+                <br>
+                kwandela
+                <br>
+                Bizana
+                <br>
+                4800
+              </div>
+            </div>
+             </div>
         </div>
         <!-- Looping through the pizza ends here -->
+
+          </div>
     </div>
+
 </body>
 
 </html>
